@@ -9,14 +9,14 @@ parser = argparse.ArgumentParser(
     description="Simple backend"
 )
 
-parser.add_argument("--ip", type=str, required=True)
+parser.add_argument("--ip", type=str, required=False)
 parser.add_argument("--port", type=int, default=4000, required=False)
 
 def connect(): #return socket
     args = parser.parse_args()
     
     s = socket.socket()
-    s.bind((args.ip, args.port))
+    s.bind(('0.0.0.0', args.port))
     s.listen(1)
     
     conn, addr = s.accept()
